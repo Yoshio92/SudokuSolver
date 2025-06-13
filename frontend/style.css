@@ -9,13 +9,45 @@ table {
   margin: 20px auto;
 }
 
+/* Borda externa mais grossa */
+#sudokuBoard {
+  border: 4px solid #000;
+}
+
+/* Células padrão (borda fina) */
 td {
   width: 40px;
   height: 40px;
   text-align: center;
   border: 1px solid #000;
   font-size: 20px;
+  padding: 0;
 }
+
+/* Bordas médias entre blocos 3x3 - verticais */
+td:nth-child(3),
+td:nth-child(6) {
+  border-right: 2px solid #000;
+}
+
+td:nth-child(1),
+td:nth-child(4),
+td:nth-child(7) {
+  border-left: 2px solid #000;
+}
+
+/* Bordas médias entre blocos 3x3 - horizontais */
+tr:nth-child(3) td,
+tr:nth-child(6) td {
+  border-bottom: 2px solid #000;
+}
+
+tr:nth-child(1) td,
+tr:nth-child(4) td,
+tr:nth-child(7) td {
+  border-top: 2px solid #000;
+}
+
 
 input {
   width: 38px;
@@ -34,4 +66,14 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   margin: 10px auto;
+  background-color: #007bff; /* Azul primário */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
 }
